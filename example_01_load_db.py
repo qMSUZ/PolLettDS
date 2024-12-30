@@ -38,10 +38,11 @@ loaded_data, loaded_labels, labels_count = pld.load_pol_lett_db_from_files(
                                                 'pol_lett_db.bin', 
                                                 'pol_lett_db_labels.bin')
 
-d=1405
+d=1202
 block_size=64*64
 a=64*64 * d
 iaa = loaded_data[a:a+block_size].reshape(64,64)
 
 plt.matshow(iaa,  cmap='gray', vmin=0, vmax=255)
 
+print("Label as char or digit:", pld.get_char_for_label(loaded_labels[d]))

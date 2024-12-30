@@ -624,12 +624,38 @@ def load_pol_lett_db_from_files( fname_db, fname_db_labels):
     return loaded_data, loaded_labels, labels_count
 
 def create_handles_for_db( leading_name ):
+    """
+    TODO
+
+    Parameters
+    ----------
+    aaa : type  description
+        
+
+    Returns
+    -------
+        description
+
+    """ 
     fImages = open(leading_name + '.bin', 'wb')
     fLabels = open(leading_name + '_labels.bin', 'wb')
     
     return fImages, fLabels
     
 def dump_data_to_file( fImages, fLabels, documentName):
+    """
+    TODO
+
+    Parameters
+    ----------
+    aaa : type  description
+        
+
+    Returns
+    -------
+        description
+
+    """ 
     doc = Image.open( documentName )
 
     # extract digit and put it into file
@@ -703,6 +729,19 @@ def dump_data_to_file( fImages, fLabels, documentName):
         
 
 def close_handles( fImages, fLabels):
+    """
+    TODO
+
+    Parameters
+    ----------
+    aaa : type  description
+        
+
+    Returns
+    -------
+        description
+
+    """ 
     fImages.close()
     fLabels.close()
 

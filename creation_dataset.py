@@ -44,5 +44,8 @@ for fname in file_png_list:
     print("processing file", file_idx,"/", file_count, ":", fname, "...", end=" ")
     pld.dump_data_to_file(fimages, flabels, fname.replace(os.sep, '/'))
     print(" done", end="\n")
+    file_idx=file_idx+1
 
 pld.close_handles( fimages, flabels )
+
+

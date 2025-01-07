@@ -1,2 +1,2 @@
-# PolLettDB
-Polish Handwritten Letters and Digits Database
+# PolLettDS
+Polish Handwritten Letters and Digits Data Set

@@ -31,18 +31,73 @@
 # * THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.              *
 # ***************************************************************************/
 
-import PolLettDB as pld
+import PolLettDS as pld
 import matplotlib.pyplot as plt
 
-loaded_data, loaded_labels, labels_count = pld.load_pol_lett_db_from_files(
-                                                'pol_lett_db.bin', 
-                                                'pol_lett_db_labels.bin')
+loaded_data, loaded_labels, labels_count = pld.load_pol_lett_ds_from_files(
+                                                'pol_lett_ds.bin',
+                                                'pol_lett_ds_labels.bin' )
 
-d=1202
+n_set = labels_count // 80
+print(f"Number of set: {n_set}")
+
+
+# get Ą
+i=0
+d=46 + i*80
 block_size=64*64
 a=64*64 * d
 iaa = loaded_data[a:a+block_size].reshape(64,64)
+fig, ax = plt.subplots() 
+ax.set_axis_off()
+ax.matshow(iaa,  cmap='gray', vmin=0, vmax=255)
+#plt.savefig("image-1.png")
+print("Label as char or digit:", pld.get_char_for_label(loaded_labels[d]))
 
-plt.matshow(iaa,  cmap='gray', vmin=0, vmax=255)
+# get k
+i=0
+d=23 + i*80
+block_size=64*64
+a=64*64 * d
+iaa = loaded_data[a:a+block_size].reshape(64,64)
+fig, ax = plt.subplots() 
+ax.set_axis_off()
+ax.matshow(iaa,  cmap='gray', vmin=0, vmax=255)
+#plt.savefig("image-2.png")
+print("Label as char or digit:", pld.get_char_for_label(loaded_labels[d]))
 
+# get Ż
+i=0
+d=79 + i*80
+block_size=64*64
+a=64*64 * d
+iaa = loaded_data[a:a+block_size].reshape(64,64)
+fig, ax = plt.subplots( ) 
+ax.set_axis_off()
+ax.matshow(iaa,  cmap='gray', vmin=0, vmax=255)
+#plt.savefig("image-3.png")
+print("Label as char or digit:", pld.get_char_for_label(loaded_labels[d]))
+
+# get 4
+i=0
+d=4 + i*80
+block_size=64*64
+a=64*64 * d
+iaa = loaded_data[a:a+block_size].reshape(64,64)
+fig, ax = plt.subplots( ) 
+ax.set_axis_off()
+ax.matshow(iaa,  cmap='gray', vmin=0, vmax=255)
+#plt.savefig("image-4.png")
+print("Label as char or digit:", pld.get_char_for_label(loaded_labels[d]))
+
+# get 9
+i=0
+d=9 + i*80
+block_size=64*64
+a=64*64 * d
+iaa = loaded_data[a:a+block_size].reshape(64,64)
+fig, ax = plt.subplots( ) 
+ax.set_axis_off()
+ax.matshow(iaa,  cmap='gray', vmin=0, vmax=255)
+#plt.savefig("image-5.png")
 print("Label as char or digit:", pld.get_char_for_label(loaded_labels[d]))

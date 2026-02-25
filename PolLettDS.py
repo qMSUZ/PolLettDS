@@ -3,7 +3,7 @@
 #
 
 #/***************************************************************************
-# *   Copyright (C) 2024         by Marek Sawerwain                         *
+# *   Copyright (C) 2024, 2025  by Marek Sawerwain                         *
 # *                                  <M.Sawerwain@gmail.com>                *
 # *                                  <M.Sawerwain@issi.uz.zgora.pl>         *
 # *                                                                         *
@@ -93,17 +93,33 @@ _letters_offset_dictionary = {
 
 def get_char_for_label( _label ):
     """
-    TODO
-
-    Parameters
-    ----------
-    aaa : type  description
-        
-
-    Returns
-    -------
-        description
-
+       Return the character associated with a given numerical label.
+    
+       This function looks up the corresponding character for the provided label
+       based on a predefined mapping of characters to integer values. If the label
+       does not exist in the mapping, the function returns ``None``.
+    
+       Parameters
+       ----------
+       _label : int
+           Numerical label representing a character.
+    
+       Returns
+       -------
+       str or None
+           The character corresponding to the given label, or ``None`` if the label
+           is not found.
+    
+       Examples
+       --------
+       >>> get_char_for_label(10)
+       'a'
+       >>> get_char_for_label(50)
+       'A'
+       >>> get_char_for_label(84)
+       'Ż'
+       >>> get_char_for_label(999)
+       None
     """ 
 
     if _label in labels.values():
